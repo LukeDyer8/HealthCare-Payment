@@ -1,17 +1,17 @@
 body{
 	background-color: rgb(193, 200, 221);
-}
-p{
-	font-family: sans-serif;
-	font-size: 12px;
+    margin-right: 10%;
+    margin-left: 10%;
 }
 .blackBorder{
 	border: 4px rgb(39, 38, 38) solid;
+    margin: 10px;
+	padding: 5px;
+    background-color: white;
 }
 .blueBorder{
 	border: 4px lightblue solid;
-	margin: 10px;
-	padding: 5px;
+	
 }
 .heading {
 	border: 4px lightblue solid;
