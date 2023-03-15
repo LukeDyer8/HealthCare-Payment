@@ -20,3 +20,10 @@ body{
 	background-color: rgb(177, 177, 231);
 	text-align: center;
 }
+.rcorners {
+    border-radius: 25px;
+    background: #91a5d1;
+    padding: 3px;
+    width: 250px;
+    height: 150px;
+  }
