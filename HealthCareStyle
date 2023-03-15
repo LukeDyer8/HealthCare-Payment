@@ -1,37 +1,22 @@
 body{
-	margin-left: 10%;
-	margin-right: 10%;
-	background-image: url("images/background.gif");
-
+	background-color: rgb(193, 200, 221);
 }
-.greenBorder {
-	border: 10px white solid;
-	border-width: thick;
-	background-color: white;
+p{
+	font-family: sans-serif;
+	font-size: 12px;
 }
-.redBorder {
-	text-align: right;
-	background-color: #A8F0F0;
+.blackBorder{
+	border: 4px rgb(39, 38, 38) solid;
 }
-.orangeBorder {
-	font-size: 14px;
-}
-.blueBorder {
-	border: 4px #C2E9E9 solid;
-	border-width: thick;
-	background-color: #E8FBFB;
-	margin-top: 10px;
+.blueBorder{
+	border: 4px lightblue solid;
+	margin: 10px;
 	padding: 5px;
 }
-.purpleBorder {
-	border-bottom: 2px blue dashed;
-	border-width: thick;
-}
-.images {
-	float: right;
-
-
-}
-.spacer {
-	clear: right;
+.heading {
+	border: 4px lightblue solid;
+	margin: 10px;
+	padding: 5px;
+	background-color: rgb(177, 177, 231);
+	text-align: center;
 }
