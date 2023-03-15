@@ -1,0 +1,37 @@
+body{
+	margin-left: 10%;
+	margin-right: 10%;
+	background-image: url("images/background.gif");
+
+}
+.greenBorder {
+	border: 10px white solid;
+	border-width: thick;
+	background-color: white;
+}
+.redBorder {
+	text-align: right;
+	background-color: #A8F0F0;
+}
+.orangeBorder {
+	font-size: 14px;
+}
+.blueBorder {
+	border: 4px #C2E9E9 solid;
+	border-width: thick;
+	background-color: #E8FBFB;
+	margin-top: 10px;
+	padding: 5px;
+}
+.purpleBorder {
+	border-bottom: 2px blue dashed;
+	border-width: thick;
+}
+.images {
+	float: right;
+
+
+}
+.spacer {
+	clear: right;
+}
