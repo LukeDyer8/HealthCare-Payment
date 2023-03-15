@@ -1,0 +1,22 @@
+body{
+	background-color: rgb(193, 200, 221);
+}
+p{
+	font-family: sans-serif;
+	font-size: 12px;
+}
+.blackBorder{
+	border: 4px rgb(39, 38, 38) solid;
+}
+.blueBorder{
+	border: 4px lightblue solid;
+	margin: 10px;
+	padding: 5px;
+}
+.heading {
+	border: 4px lightblue solid;
+	margin: 10px;
+	padding: 5px;
+	background-color: rgb(177, 177, 231);
+	text-align: center;
+}
