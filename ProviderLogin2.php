@@ -23,7 +23,7 @@
 		{
 	?>		
 			Login Complete
-			Click <a href="Provider.html">  Here </a> to Continue to Provider Page.
+			Click <a href="ProviderPage.html">  Here </a> to Continue to Provider Page.
 	
 		<?php 
 		}
