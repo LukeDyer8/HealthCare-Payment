@@ -2,7 +2,7 @@
 <html lang="EN">
   <head> 
 	<title>ProviderLogin2</title>
-	<link rel="stylesheet" type="text/css" href=".css" >
+	<link rel="stylesheet" type="text/css" href="ProviderStyle.css" >
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   </head>
   <body>

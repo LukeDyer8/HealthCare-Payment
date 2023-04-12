@@ -3,7 +3,7 @@
 <head>
 	<title> Upcoming Appointments </title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" type="text/css" href="f.css">
+	<link rel="stylesheet" type="text/css" href="ProviderStyle.css">
 </head>
 <body>
 <?php
