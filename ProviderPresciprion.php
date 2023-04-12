@@ -6,39 +6,54 @@
 	<link rel="stylesheet" type="text/css" href="ProviderStyle.css">
 </head>
 <body>
+<br>
+		<a href=""> Back to Main Page</a>
+		<br>
+	    <a href="ProviderAppointment.php"> Upcoming Appointments </a>
+		<br>
+	    <a href="ProviderNotes.php"> Previous Patent Visits </a> 
 <?php
-	//$db = mysqli_connect("studentdb-maria.gl.umbc.edu","ldyer2","ldyer2","ldyer2");
+	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","ldyer2","ldyer2","ldyer2");
 
 
+	$select_query = "SELECT * FROM `RefillPrescription`";
 
+	$select = mysqli_query($db, $select_query);
 
-		#$num_rows = mysqli_num_rows($select);
+	if(! $select){
+		print("Error - query could not be executed");
+		$error = mysqli_error($db);
+		print "<p> . $error . </p>";
+		exit;
+	}
+		$num_rows = mysqli_num_rows($select);
+		if($num_rows != 0){
 
-
-		#if($num_rows != 0){
-
-			#for all the rows as returned by the query, go through each row
-			#and use the mysql_fetch_array function to return an array of the next row
-			#field values can be obtained by subscripting the returned aray with the column names
 ?>
-<h2> All Entries: </h2>
+<h1> Prescription Refill Requests: </h1>
 						<table border="1">
 					<tr>
-						<th> Title </th>
-						<th> Content </th>
-						<th> Emotion </th>
-						<th> Tags </th>
+						<th> Patient Name </th>
+						<th> Date Of Birth </th>
+						<th> Phone Number </th>
+						<th> Medication Name </th>
+						<th> Medication Dosage </th>
+						<th> Pharmacy Name </th>
+						<th> Pharmacy Phone Number </th>
 					</tr>
 
 <?php
 
- /* for($row_num = 0; $row_num < $num_rows; $row_num++){
+ for($row_num = 0; $row_num < $num_rows; $row_num++){
 	print("<tr>");
 	$row_array = mysqli_fetch_array($select);
-	print("<td>$row_array[title]</td>");
-	print("<td>$row_array[content_text]</td>");
-	print("<td>$row_array[userFeeling]</td>");
-	print("<td>$row_array[userTags]</td>");
+	print("<td>$row_array[PatientName]</td>");
+	print("<td>$row_array[DOB]</td>");
+	print("<td>$row_array[PhoneNum]</td>");
+	print("<td>$row_array[NameOfMed]</td>");
+	print("<td>$row_array[DosageOfMed]</td>");
+	print("<td>$row_array[PharmacyName]</td>");
+	print("<td>$row_array[PharmacyPhoneNum]</td>");
 	print("</tr>");		
 }
 }
@@ -46,12 +61,6 @@
 
 	print('</table>');
 	print('<br>');
-	print('<a href="https://swe.umbc.edu/~ldyer2/is448/ChapterSQL/postCreate.html"> Create Post </a>');
-	
-	} else {
-		echo "Please go back and fill out all information";
-	}
-	*/
 
 ?>
 </body>

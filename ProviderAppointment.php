@@ -6,6 +6,11 @@
 	<link rel="stylesheet" type="text/css" href="ProviderStyle.css">
 </head>
 <body>
+		<a href=""> Back to Main Page</a>
+		<br>
+		<a href="ProviderPresciprion.php"> Prescription Refill Requests </a> <!-- This Page will show what refills have been requested and by who -->
+		<br>
+	    <a href="ProviderNotes.php"> Previous Patent Visits </a> <!-- THis Page will show a List of the patients and let you write in comments, by putting in Patient ID -->
 <?php
 	//$db = mysqli_connect("studentdb-maria.gl.umbc.edu","ldyer2","ldyer2","ldyer2");
 
@@ -21,13 +26,13 @@
 			#and use the mysql_fetch_array function to return an array of the next row
 			#field values can be obtained by subscripting the returned aray with the column names
 ?>
-<h2> All Entries: </h2>
+<h1> Upcoming Appointments: </h1>
 						<table border="1">
 					<tr>
-						<th> Title </th>
-						<th> Content </th>
-						<th> Emotion </th>
-						<th> Tags </th>
+						<th> Appointment ID</th>
+						<th> Name </th>
+						<th> Phone Number </th>
+						<th> Appt. Date </th>
 					</tr>
 
 <?php
