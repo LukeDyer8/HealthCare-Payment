@@ -22,8 +22,15 @@
 			(preg_match("/^admin$/", $docPass)))
 		{
 	?>		
-			Login Complete
-			Click <a href="ProviderPage.html">  Here </a> to Continue to Provider Page.
+				<h1> Provider Page </h1>
+
+<a href="https://swe.umbc.edu/~ngugssa1/is448/loginReg/"> Back To User Login</a>
+	<br>
+	<a href="ProviderAppointment.php"> Upcoming Appointments </a>  
+	<br>
+	<a href="ProviderPresciprion.php"> Prescription Refill Requests </a> 
+	<br>
+	<a href="ProviderNotes.php"> Previous Patent Visits </a> 
 	
 		<?php 
 		}

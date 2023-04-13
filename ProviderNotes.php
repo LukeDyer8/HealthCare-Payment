@@ -6,15 +6,16 @@
 	<link rel="stylesheet" type="text/css" href="ProviderStyle.css">
 </head>
 <body>
-		<a href=""> Back to Main Page</a>
+		<a href="https://swe.umbc.edu/~ngugssa1/is448/loginReg/"> Back To User Login</a>
 		<br>
 		<a href="ProviderAppointment.php"> Upcoming Appointments </a>   <!-- This Page will let the Provider see all user appointment Name, date and time -->
 		<br>
 	    <a href="ProviderPresciprion.php"> Prescription Refill Requests </a> <!-- This Page will show what refills have been requested and by who -->
 <?php
 	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","ldyer2","ldyer2","ldyer2");
-
-	$select_query = "SELECT * FROM `Appointments`";
+	$today = date('Y-m-d');
+	
+	$select_query = "SELECT * FROM `Appointments` WHERE DateNow < '$today'";
 
 	$select = mysqli_query($db, $select_query);
 
@@ -43,7 +44,7 @@
 	$row_array = mysqli_fetch_array($select);
 	print("<td>$row_array[apptID]</td>");
 	print("<td>$row_array[name]</td>");
-	print("<td>$row_array[Date]</td>");
+	print("<td>$row_array[DateNow]</td>");
 	print("<td>$row_array[docNotes]</td>");
 	print("</tr>");		
 }

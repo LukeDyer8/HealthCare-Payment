@@ -22,7 +22,6 @@
 		$Notes = mysqli_real_escape_string($db,$Notes);
 
         $update_query = "UPDATE `Appointments` SET `docNotes` = '$Notes' WHERE `Appointments`.`apptID` = $ApptID;";
-        print($update_query);
 
         $update = mysqli_query($db, $update_query);
 
