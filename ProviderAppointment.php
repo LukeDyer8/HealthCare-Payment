@@ -8,55 +8,57 @@
 <body>
 <a href="https://swe.umbc.edu/~ngugssa1/is448/loginReg/"> Back To User Login</a>
 		<br>
-		<a href="ProviderPresciprion.php"> Prescription Refill Requests </a> <!-- This Page will show what refills have been requested and by who -->
+		<a href="ProviderPresciprion.php"> Prescription Refill Requests </a> 
 		<br>
-	    <a href="ProviderNotes.php"> Previous Patent Visits </a> <!-- THis Page will show a List of the patients and let you write in comments, by putting in Patient ID -->
+	    <a href="ProviderNotes.php"> Previous Patent Visits </a> 
 <?php
-	//$db = mysqli_connect("studentdb-maria.gl.umbc.edu","ldyer2","ldyer2","ldyer2");
+	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","ldyer2","ldyer2","ldyer2");
+	$today = date('Y-m-d');
+	
+	$select_query = "SELECT * FROM `Appointments` WHERE DateNow > '$today'";
 
+	$select = mysqli_query($db, $select_query);
 
-
-
-		#$num_rows = mysqli_num_rows($select);
-
-
-		#if($num_rows != 0){
-
-			#for all the rows as returned by the query, go through each row
-			#and use the mysql_fetch_array function to return an array of the next row
-			#field values can be obtained by subscripting the returned aray with the column names
+	if(! $select){
+		print("Error - query could not be executed");
+		$error = mysqli_error($db);
+		print "<p> . $error . </p>";
+		exit;
+	}
+		$num_rows = mysqli_num_rows($select);
+		if($num_rows != 0){
 ?>
-<h1> Upcoming Appointments: </h1>
+<h1> Previous Appointments: </h1>
 						<table border="1">
 					<tr>
 						<th> Appointment ID</th>
 						<th> Name </th>
-						<th> Phone Number </th>
-						<th> Appt. Date </th>
+						<th> Appointment Reason</th>
+						<th> Patient Comments </th>
+						<th> Date </th>
+						<th> Time </th>
+						<th> Notes </th>
 					</tr>
 
 <?php
 
- /* for($row_num = 0; $row_num < $num_rows; $row_num++){
+  for($row_num = 0; $row_num < $num_rows; $row_num++){
 	print("<tr>");
 	$row_array = mysqli_fetch_array($select);
-	print("<td>$row_array[title]</td>");
-	print("<td>$row_array[content_text]</td>");
-	print("<td>$row_array[userFeeling]</td>");
-	print("<td>$row_array[userTags]</td>");
+	print("<td>$row_array[apptID]</td>");
+	print("<td>$row_array[name]</td>");
+	print("<td>$row_array[apptReason]</td>");
+	print("<td>$row_array[comments]</td>");
+	print("<td>$row_array[DateNow]</td>");
+	print("<td>$row_array[Time]</td>");
+	print("<td>$row_array[docNotes]</td>");
 	print("</tr>");		
 }
+} else {
+	print('<h1> You Have No Upcoming Appointments');
 }
-
-
 	print('</table>');
 	print('<br>');
-	print('<a href="https://swe.umbc.edu/~ldyer2/is448/ChapterSQL/postCreate.html"> Create Post </a>');
-	
-	} else {
-		echo "Please go back and fill out all information";
-	}
-	*/
 
 ?>
 </body>
