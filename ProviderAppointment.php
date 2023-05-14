@@ -12,10 +12,10 @@
 		<br>
 	    <a href="ProviderNotes.php"> Previous Patent Visits </a> 
 <?php
-	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","ldyer2","ldyer2","ldyer2");
+	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","zaman3","zaman3","zaman3");
 	$today = date('Y-m-d');
 	
-	$select_query = "SELECT * FROM `Appointments` WHERE DateNow > '$today'";
+	$select_query = "SELECT * FROM `appointment_info` WHERE DateNow > '$today'";
 
 	$select = mysqli_query($db, $select_query);
 
@@ -46,12 +46,13 @@
 	print("<tr>");
 	$row_array = mysqli_fetch_array($select);
 	print("<td>$row_array[apptID]</td>");
-	print("<td>$row_array[name]</td>");
-	print("<td>$row_array[apptReason]</td>");
+	print("<td>$row_array[fname]</td>");
+	print("<td>$row_array[lname]</td>");
+	print("<td>$row_array[Reason]</td>");
 	print("<td>$row_array[comments]</td>");
-	print("<td>$row_array[DateNow]</td>");
-	print("<td>$row_array[Time]</td>");
-	print("<td>$row_array[docNotes]</td>");
+	print("<td>$row_array[visit_date]</td>");
+	print("<td>$row_array[visit_time]</td>");
+	print("<td>$row_array[doctor_notes]</td>");
 	print("</tr>");		
 }
 } else {
