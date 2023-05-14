@@ -7,7 +7,7 @@
 </head>
 <body>
 <br>
-		<a href="https://swe.umbc.edu/~ngugssa1/is448/loginReg/"> Back To User Login</a>
+		<a href="https://swe.umbc.edu/~ngugssa1/is448/loginReg/login.html"> Back To User Login</a>
 		<br>
 	    <a href="ProviderAppointment.php"> Upcoming Appointments </a>
 		<br>
