@@ -12,7 +12,7 @@
 		<br>
 	    <a href="ProviderPresciprion.php"> Prescription Refill Requests </a> <!-- This Page will show what refills have been requested and by who -->
 <?php
-	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","ldyer2","ldyer2","ldyer2");
+	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","zaman3","zaman3","zaman3");
 	$today = date('Y-m-d');
 	
 	$select_query = "SELECT * FROM `Appointments` WHERE DateNow < '$today'";

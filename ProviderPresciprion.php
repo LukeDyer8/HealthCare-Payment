@@ -13,7 +13,7 @@
 		<br>
 	    <a href="ProviderNotes.php"> Previous Patent Visits </a> 
 <?php
-	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","ldyer2","ldyer2","ldyer2");
+	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","plee8","plee8","plee8");
 
 
 	$select_query = "SELECT * FROM `RefillPrescription`";
@@ -47,13 +47,13 @@
  for($row_num = 0; $row_num < $num_rows; $row_num++){
 	print("<tr>");
 	$row_array = mysqli_fetch_array($select);
-	print("<td>$row_array[PatientName]</td>");
-	print("<td>$row_array[DOB]</td>");
-	print("<td>$row_array[PhoneNum]</td>");
-	print("<td>$row_array[NameOfMed]</td>");
-	print("<td>$row_array[DosageOfMed]</td>");
-	print("<td>$row_array[PharmacyName]</td>");
-	print("<td>$row_array[PharmacyPhoneNum]</td>");
+	print("<td>$row_array[fname]</td>");
+	print("<td>$row_array[dob]</td>");
+	print("<td>$row_array[pnumber]</td>");
+	print("<td>$row_array[mname]</td>");
+	print("<td>$row_array[dosage]</td>");
+	print("<td>$row_array[pharmname]</td>");
+	print("<td>$row_array[pharmnumber]</td>");
 	print("</tr>");		
 }
 }

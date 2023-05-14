@@ -8,7 +8,7 @@
 	<body>
     <h1> Provider Notes </h1>
     <?php
-	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","ldyer2","ldyer2","ldyer2");
+	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","zaman3","zaman3","zaman3");
 
 	if (mysqli_connect_errno())	exit("Error - could not connect to MySQL");
 
@@ -21,7 +21,7 @@
 		$Notes = htmlspecialchars($_POST['notes']);
 		$Notes = mysqli_real_escape_string($db,$Notes);
 
-        $update_query = "UPDATE `Appointments` SET `docNotes` = '$Notes' WHERE `Appointments`.`apptID` = $ApptID;";
+        $update_query = "UPDATE `appointment_info` SET `doctor_notes` = '$Notes' WHERE `appointment_info`.`appt_ID` = $ApptID;";
 
         $update = mysqli_query($db, $update_query);
 
