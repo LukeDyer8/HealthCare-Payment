@@ -15,7 +15,7 @@
 	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","zaman3","zaman3","zaman3");
 	$today = date('Y-m-d');
 	
-	$select_query = "SELECT * FROM `Appointments` WHERE DateNow < '$today'";
+	$select_query = "SELECT * FROM `Customer_Info`,`appointment_info` WHERE visit_date < '$today'";
 
 	$select = mysqli_query($db, $select_query);
 
@@ -32,9 +32,10 @@
 						<table border="1">
 					<tr>
 						<th> Appointment ID</th>
-						<th> Name </th>
+						<th> Last Name </th>
+						<th> First Name </th>
 						<th> Appointment Date </th>
-						<th> Notes </th>
+						<th> Doctor Notes </th>
 					</tr>
 
 <?php
@@ -42,10 +43,11 @@
   for($row_num = 0; $row_num < $num_rows; $row_num++){
 	print("<tr>");
 	$row_array = mysqli_fetch_array($select);
-	print("<td>$row_array[apptID]</td>");
-	print("<td>$row_array[name]</td>");
-	print("<td>$row_array[DateNow]</td>");
-	print("<td>$row_array[docNotes]</td>");
+	print("<td>$row_array[appt_ID]</td>");
+	print("<td>$row_array[first_name]</td>");
+	print("<td>$row_array[last_name]</td>");
+	print("<td>$row_array[visit_date]</td>");
+	print("<td>$row_array[doctor_notes]</td>");
 	print("</tr>");		
 }
 }

@@ -16,7 +16,7 @@
 	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","plee8","plee8","plee8");
 
 
-	$select_query = "SELECT * FROM `RefillPrescription`";
+	$select_query = "SELECT * FROM `patientinfo`,`prescriptioninfo`";
 
 	$select = mysqli_query($db, $select_query);
 
@@ -38,6 +38,7 @@
 						<th> Phone Number </th>
 						<th> Medication Name </th>
 						<th> Medication Dosage </th>
+						<th> Frequency </th>
 						<th> Pharmacy Name </th>
 						<th> Pharmacy Phone Number </th>
 					</tr>
@@ -52,6 +53,7 @@
 	print("<td>$row_array[pnumber]</td>");
 	print("<td>$row_array[mname]</td>");
 	print("<td>$row_array[dosage]</td>");
+	print("<td>$row_array[frequency]</td>");
 	print("<td>$row_array[pharmname]</td>");
 	print("<td>$row_array[pharmnumber]</td>");
 	print("</tr>");		

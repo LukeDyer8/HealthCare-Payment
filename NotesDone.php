@@ -31,7 +31,7 @@
             print "<p> . $error . </p>";
             exit;
         }
-
+        print("<p> Your notes have been updated. </p>");
         print('<a href="ProviderNotes.php"> Go Back </a>');
     } else {
         print('Please Go Back and Enter All Information.');
