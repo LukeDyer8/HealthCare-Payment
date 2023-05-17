@@ -1,9 +1,3 @@
-<?php
-session_start();
-if(!isset( $_SESSION["user"])) {
-    header("Location: login.php");
-}
-?>
 <!DOCTYPE html>
 <html lang="EN">
 <head>
@@ -14,9 +8,9 @@ if(!isset( $_SESSION["user"])) {
 <body>
 <a href="https://swe.umbc.edu/~ngugssa1/is448/loginReg/login.html"> Back To User Login</a>
 		<br>
-		<a href="ProviderPresciprion.php"> Prescription Refill Requests </a> 
+		<a class="blueborder" href="ProviderPresciprion.php"> Prescription Refill Requests </a> 
 		<br>
-	    <a href="ProviderNotes.php"> Previous Patent Visits </a> 
+	    <a class="blueborder" href="ProviderNotes.php"> Previous Patent Visits </a> 
 <?php
 	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","zaman3","zaman3","zaman3");
 	$today = date('Y-m-d');

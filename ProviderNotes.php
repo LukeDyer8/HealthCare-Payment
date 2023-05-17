@@ -1,9 +1,3 @@
-<?php
-session_start();
-if(!isset( $_SESSION["user"])) {
-    header("Location: login.php");
-}
-?>
 <!DOCTYPE html>
 <html lang="EN">
 <head>
@@ -12,16 +6,16 @@ if(!isset( $_SESSION["user"])) {
 	<link rel="stylesheet" type="text/css" href="ProviderStyle.css">
 </head>
 <body>
-		<a href="https://swe.umbc.edu/~ngugssa1/is448/loginReg/login.html"> Back To User Login</a>
+		<a class="blueborder" href="https://swe.umbc.edu/~ngugssa1/is448/loginReg/login.html"> Back To User Login</a>
 		<br>
-		<a href="ProviderAppointment.php"> Upcoming Appointments </a>   <!-- This Page will let the Provider see all user appointment Name, date and time -->
+		<a class="blueborder" href="ProviderAppointment.php"> Upcoming Appointments </a>   <!-- This Page will let the Provider see all user appointment Name, date and time -->
 		<br>
-	    <a href="ProviderPresciprion.php"> Prescription Refill Requests </a> <!-- This Page will show what refills have been requested and by who -->
+	    <a class="blueborder" href="ProviderPresciprion.php"> Prescription Refill Requests </a> <!-- This Page will show what refills have been requested and by who -->
 <?php
 	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","zaman3","zaman3","zaman3");
 	$today = date('Y-m-d');
 	
-	$select_query = "SELECT * FROM `Customer_Info`,`appointment_info` WHERE visit_date < '$today'";
+	$select_query = "SELECT * FROM Customer_Info LEFT JOIN appointment_info ON Customer_Info.appointment_ID = appointment_info.appt_ID WHERE visit_date < '$today'";
 
 	$select = mysqli_query($db, $select_query);
 

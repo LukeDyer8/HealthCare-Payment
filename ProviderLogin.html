@@ -1,9 +1,3 @@
-<?php
-session_start();
-if(!isset( $_SESSION["user"])) {
-    header("Location: login.php");
-}
-?>
 <!DOCTYPE html>
 <html lang="EN">
 	<head>
@@ -14,7 +8,7 @@ if(!isset( $_SESSION["user"])) {
 	<body>
 	<a href="https://swe.umbc.edu/~ngugssa1/is448/loginReg/"> Back To User Login</a>
 	<h1> Provider Login </h1>
-	    <form method="post" action="ProviderPage.php">
+	    <form mzethod="post" action="ProviderPage.php">
 
 	  Username <input type="text" id="docUsername" name="docUsername">
 
