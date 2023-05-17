@@ -1,16 +1,23 @@
 <?php
 session_start();
-$_SESSION["docUsername"];
+if (isset($_SESSION['admin'])) {
+    unset($_SESSION['admin']);
+    session_destroy();
+    header("Location: ProviderLogin.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="EN">
 	<head>
 		<title>Provider Login</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<link rel="stylesheet" type="text/css" href="ProviderStyle.css" />
+		<link rel="stylesheet" type="text/css" href="testing.css" />
 	</head>
 	<body>
-	<a href="https://swe.umbc.edu/~ngugssa1/is448/loginReg/"> Back To User Login</a>
+	<div class = "blueBorder" >
+	<a href="loginReg" > Back To User Login</a>
+	</div>
 	<h1> Provider Login </h1>
 	    <form method="post" action="ProviderPage.php">
 

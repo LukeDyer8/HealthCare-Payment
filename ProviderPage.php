@@ -1,8 +1,12 @@
+<?php
+session_start();
+$_SESSION['admin'] = true;
+?>
 <!DOCTYPE html>
 <html lang="EN">
   <head> 
 	<title>ProviderLogin2</title>
-	<link rel="stylesheet" type="text/css" href="ProviderStyle.css" >
+	<link rel="stylesheet" type="text/css" href="testing.css" >
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   </head>
   <body>
@@ -22,23 +26,22 @@
 			(preg_match("/^admin$/", $docPass)))
 		{
 	?>		
-				<h1> Provider Page </h1>
-
-<a href="https://swe.umbc.edu/~ngugssa1/is448/loginReg/login.html"> Back To User Login</a>
-	<br>
-	<a href="ProviderAppointment.php"> Upcoming Appointments </a>  
-	<br>
-	<a href="ProviderPresciprion.php"> Prescription Refill Requests </a> 
-	<br>
-	<a href="ProviderNotes.php"> Previous Patent Visits </a> 
-	
+	<img class = "homepageImage" src = "homepage.png" alt = "Homepage image"> <br>
+	<h1> Provider Page </h1>
+<div class = "homepageBorder" >
+	<span class = "menu"> Menu Options </span> <br> <br>
+	<a href = "ProviderAppointment.php"> View Upcomming Appointments </a> <br> <br>
+	 <a href = "ProviderNotes.php"> Create Patient Notes </a> <br> <br>
+	 <a href = "ProviderPresciprion.php"> View Prescription Requests </a> <br> <br>
+	 <a href = "ProviderLogin.php"> Log Out </a> <br>		
+</div>
 		<?php 
 		}
 		else{
 
 		?>
 			Invalid Username and Password <br>
-			Please <a href="ProviderLogin.html"> Go Back </a> and Re-enter Your Username and Password.
+			Please <a href="ProviderLogin.php"> Go Back </a> and Re-enter Your Username and Password.
 
 		<?php
 		}
@@ -48,7 +51,7 @@
 
 		?>
 			Login Filled Out Incorrectly <br>
-			Please <a href="ProviderLogin.html"> Go Back </a> and Complete All Fileds.
+			Please <a href="ProviderLogin.php"> Go Back </a> and Complete All Fileds.
 
 			<?php
 		}

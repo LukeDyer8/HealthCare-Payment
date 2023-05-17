@@ -1,21 +1,28 @@
+<?php
+session_start();
+if (!isset($_SESSION['admin'])) {
+	header("Location: ProviderLogin.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="EN">
 <head>
 	<title> Upcoming Appointments </title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" type="text/css" href="ProviderStyle.css">
+	<link rel="stylesheet" type="text/css" href="testing.css">
 </head>
 <body>
-<a href="https://swe.umbc.edu/~ngugssa1/is448/loginReg/login.html"> Back To User Login</a>
-		<br>
-		<a class="blueborder" href="ProviderPresciprion.php"> Prescription Refill Requests </a> 
-		<br>
-	    <a class="blueborder" href="ProviderNotes.php"> Previous Patent Visits </a> 
+<div class = "blueBorder" >
+	 <a href = "ProviderNotes.php"> Create Patient Notes </a> 
+	 <a href = "ProviderPresciprion.php"> View Prescription Requests </a> 
+	 <a href = "ProviderLogin.php"> Log Out </a> <br>		
+</div>
 <?php
 	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","zaman3","zaman3","zaman3");
 	$today = date('Y-m-d');
 	
-	$select_query = "SELECT * FROM `Customer_Info`,`appointment_info` WHERE visit_date > '$today'";
+	$select_query = "SELECT * FROM Customer_Info LEFT JOIN appointment_info ON Customer_Info.appointment_ID = appointment_info.appt_ID WHERE visit_date > '$today'";
 
 	$select = mysqli_query($db, $select_query);
 
@@ -28,7 +35,7 @@
 		$num_rows = mysqli_num_rows($select);
 		if($num_rows != 0){
 ?>
-<h1> Previous Appointments: </h1>
+<h1> Upcoming Appointments: </h1>
 						<table border="1">
 					<tr>
 						<th> Appointment ID</th>

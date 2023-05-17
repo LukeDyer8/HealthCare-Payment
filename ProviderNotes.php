@@ -1,16 +1,23 @@
+<?php
+session_start();
+if (!isset($_SESSION['admin'])) {
+	header("Location: ProviderLogin.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="EN">
 <head>
 	<title> Upcoming Appointments </title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" type="text/css" href="ProviderStyle.css">
+	<link rel="stylesheet" type="text/css" href="testing.css">
 </head>
 <body>
-		<a class="blueborder" href="https://swe.umbc.edu/~ngugssa1/is448/loginReg/login.html"> Back To User Login</a>
-		<br>
-		<a class="blueborder" href="ProviderAppointment.php"> Upcoming Appointments </a>   <!-- This Page will let the Provider see all user appointment Name, date and time -->
-		<br>
-	    <a class="blueborder" href="ProviderPresciprion.php"> Prescription Refill Requests </a> <!-- This Page will show what refills have been requested and by who -->
+<div class = "blueBorder" >
+	<a href = "ProviderAppointment.php"> View Upcomming Appointments </a> 
+	 <a href = "ProviderPresciprion.php"> View Prescription Requests </a> 
+	 <a href = "ProviderLogin.php"> Log Out </a> <br>		
+</div>
 <?php
 	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","zaman3","zaman3","zaman3");
 	$today = date('Y-m-d');

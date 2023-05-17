@@ -1,17 +1,24 @@
+<?php
+session_start();
+if (!isset($_SESSION['admin'])) {
+	header("Location: ProviderLogin.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="EN">
 <head>
 	<title> Refill Requests </title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" type="text/css" href="ProviderStyle.css">
+	<link rel="stylesheet" type="text/css" href="testing.css">
 </head>
 <body>
 <br>
-		<a href="https://swe.umbc.edu/~ngugssa1/is448/loginReg/login.html"> Back To User Login</a>
-		<br>
-	    <a href="ProviderAppointment.php"> Upcoming Appointments </a>
-		<br>
-	    <a href="ProviderNotes.php"> Previous Patent Visits </a> 
+<div class = "blueBorder" >
+	 <a href = "ProviderAppointment.php"> View Upcomming Appointments </a> 
+	 <a href = "ProviderNotes.php"> Create Patient Notes </a> 
+	 <a href = "ProviderLogin.php"> Log Out </a> <br>		
+</div>
 <?php
 	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","plee8","plee8","plee8");
 
