@@ -77,7 +77,7 @@ if (!isset($_SESSION['admin'])) {
     <br>
     Notes:      
     <br>
-    <textarea id="notes" name="notes"></textarea>
+    <textarea id="notes" name="notes" rows="5" cols="70"> Enter notes here...</textarea>
     <br>
 	<input type="checkbox" id="enlargeText"> <label for="enlargeText">Enlarge Text</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Last Typed: <span id="time"></span>
 	<br>
