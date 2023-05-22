@@ -1,3 +1,4 @@
+/* This Code is written by Luke Dyer*/
 <?php
 session_start();
 if (isset($_SESSION['admin'])) {

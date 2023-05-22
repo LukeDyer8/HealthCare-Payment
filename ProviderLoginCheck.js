@@ -1,3 +1,4 @@
+/* This Code is written by Luke Dyer*/
 "use strict";
 window.onload = pageLoad;
 

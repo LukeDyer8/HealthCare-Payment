@@ -1,4 +1,6 @@
+
 <?php
+/* This Code is written by Luke Dyer*/
 session_start();
 if (!isset($_SESSION['admin'])) {
 	header("Location: ProviderLogin.php");

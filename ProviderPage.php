@@ -1,4 +1,5 @@
 <?php
+/* This Code is written by Luke Dyer*/
 session_start();
 $_SESSION['admin'] = true;
 ?>
