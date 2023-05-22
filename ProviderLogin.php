@@ -1,5 +1,5 @@
-/* This Code is written by Luke Dyer*/
 <?php
+/* This Code is written by Luke Dyer*/
 session_start();
 if (isset($_SESSION['admin'])) {
     unset($_SESSION['admin']);
@@ -21,7 +21,7 @@ if (isset($_SESSION['admin'])) {
     padding: 50px;
     box-shadow: rgba(100, 100, 111, .2) 0px 7px 29px 0px;
 ;">
-	<div class = "blueBorder" >
+	<div class = "blueBorder">
 	<a href="loginReg" > Back To User Login</a>
 	</div>
 	<h1> Provider Login </h1>
