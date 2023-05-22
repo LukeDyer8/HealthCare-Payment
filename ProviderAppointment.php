@@ -14,9 +14,11 @@ if (!isset($_SESSION['admin'])) {
 </head>
 <body>
 <div class = "blueBorder" >
+<span style="font-weight: bold;">
 	 <a href = "ProviderNotes.php"> Create Patient Notes </a> 
 	 <a href = "ProviderPresciprion.php"> View Prescription Requests </a> 
-	 <a href = "ProviderLogin.php"> Log Out </a> <br>		
+	 <a href = "ProviderLogin.php"> Log Out </a> <br>	
+</span>	
 </div>
 <?php
 	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","zaman3","zaman3","zaman3");

@@ -11,12 +11,16 @@ if (!isset($_SESSION['admin'])) {
 	<title> Upcoming Appointments </title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="testing.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
+	<script type = "text/javascript"  src = "ProviderNotesCheck.js"></script>
 </head>
 <body>
 <div class = "blueBorder" >
+<span style="font-weight: bold;">
 	<a href = "ProviderAppointment.php"> View Upcomming Appointments </a> 
 	 <a href = "ProviderPresciprion.php"> View Prescription Requests </a> 
 	 <a href = "ProviderLogin.php"> Log Out </a> <br>		
+</span>
 </div>
 <?php
 	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","zaman3","zaman3","zaman3");
@@ -73,9 +77,12 @@ if (!isset($_SESSION['admin'])) {
     <br>
     <textarea id="notes" name="notes"></textarea>
     <br>
-    <input type="submit" value="Submit">
-    <br>
-    <br>
+	<input type="checkbox" id="enlargeText"> <label for="enlargeText">Enlarge Text</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Last Typed: <span id="time"></span>
+	<br>
+	<br>
+	<span style = "float: left;">
+    <input type="submit" id="submit" value="Submit">
+</span>
     </form>
 </body>
 </html>

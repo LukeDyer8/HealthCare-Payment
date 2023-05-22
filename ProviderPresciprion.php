@@ -15,15 +15,17 @@ if (!isset($_SESSION['admin'])) {
 <body>
 <br>
 <div class = "blueBorder" >
+<span style="font-weight: bold;">
 	 <a href = "ProviderAppointment.php"> View Upcomming Appointments </a> 
 	 <a href = "ProviderNotes.php"> Create Patient Notes </a> 
-	 <a href = "ProviderLogin.php"> Log Out </a> <br>		
+	 <a href = "ProviderLogin.php"> Log Out </a> <br>	
+</span>	
 </div>
 <?php
 	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","plee8","plee8","plee8");
 
 
-	$select_query = "SELECT * FROM `patientinfo`,`prescriptioninfo`";
+	$select_query = "SELECT * FROM patientinfo LEFT JOIN prescriptioninfo ON patientinfo.patient_id = prescriptioninfo.precription_id";
 
 	$select = mysqli_query($db, $select_query);
 
