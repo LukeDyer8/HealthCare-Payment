@@ -42,7 +42,7 @@ $_SESSION['admin'] = true;
 
 		?>
 			Invalid Username and Password <br>
-			Please <a href="ProviderLogin.php"> Go Back </a> and Re-enter Your Username and Password.
+			Please <a href="ProviderLogin.php" class="goBackButton">Go Back</a> and Re-enter Your Username and Password.
 
 		<?php
 		}
